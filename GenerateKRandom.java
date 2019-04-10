@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Random;
 
 public class GenerateKRandom {
+	//è½¬è‡ªï¼šhttps://blog.csdn.net/u013172063/article/details/50847821
 	public int getRandom(int min, int max){
         Random random = new Random();
         return random.nextInt( max - min + 1 ) + min;
     }
 
     /**
-     * ¸ù¾İminºÍmaxËæ»úÉú³Écount¸ö²»ÖØ¸´µÄËæ»úÊı×é
+     * æ ¹æ®minå’Œmaxéšæœºç”Ÿæˆcountä¸ªä¸é‡å¤çš„éšæœºæ•°ç»„
      * @param min
      * @param max
      * @param count
@@ -24,11 +25,11 @@ public class GenerateKRandom {
         if( count > ( max - min + 1 )){
             return null;
         }
-        // ½«ËùÓĞµÄ¿ÉÄÜ³öÏÖµÄÊı×Ö·Å½øºòÑ¡list
+        // å°†æ‰€æœ‰çš„å¯èƒ½å‡ºç°çš„æ•°å­—æ”¾è¿›å€™é€‰list
         for(int i = min; i <= max; i++){
             listRandom.add(i);
         }
-        // ´ÓºòÑ¡listÖĞÈ¡³ö·ÅÈëÊı×é£¬ÒÑ¾­±»Ñ¡ÖĞµÄ¾Í´ÓÕâ¸ölistÖĞÒÆ³ı
+        // ä»å€™é€‰listä¸­å–å‡ºæ”¾å…¥æ•°ç»„ï¼Œå·²ç»è¢«é€‰ä¸­çš„å°±ä»è¿™ä¸ªlistä¸­ç§»é™¤
         for(int i = 0; i < count; i++){
             int index = getRandom(0, listRandom.size()-1);
             randoms[i] = listRandom.get(index);
